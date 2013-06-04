@@ -3,13 +3,17 @@
 @import 'icons';
 @import 'type';
 
+/* --- Variables --- */
+@base_font:     'Droid Sans';
+@fancy_font:    'Pacifico';
+
 /* --- Generic --- */
 body {
     background:     #fff;
     color:          #333;
     font-size:      16px;
     line-height:    1.7em;
-    font-family:    'Droid Sans';
+    font-family:    @base_font;
 }
 
 /* --- Mixins --- */
@@ -32,7 +36,7 @@ body {
 /* --- Header --- */
 @header_height: 50px;
 #header {
-    .twoway_gradient(#404447, #2e2f33);
+    .twoway_gradient(#474264, #2e2a48);
     display:    block;
     height:     @header_height;
     position:   fixed;
@@ -53,9 +57,10 @@ body {
     }
 
     a {
-        .twoway_gradient(#4b4f52, #292c30);
+        .twoway_gradient(lighten(#474264, 5%), lighten(#2e2a48, 5%));
+        box-shadow: inset 0 1px rgba(255, 255, 255, .2);
         .border_radius(5px);
-        border:         1px solid #2b2b2d;
+        border:         1px solid #2e2a48;
         display:        inline-block;
         float:          left;
         color:          #fff;
@@ -149,7 +154,7 @@ body {
 
         h2 {
             font-size:  1.3em;
-            color:      #5FA0DC;
+            color:      lighten(#474264, 5%);
         }
 
         p {
@@ -183,52 +188,62 @@ body {
 
 /* --- Login --- */
 #login {
-    background: url('../img/loginbg.jpg') no-repeat center center transparent;
+    .twoway_gradient(#474264, #2e2a48);
 
     h1 {
-        display:        block;
+        text-transform: none;
         text-align:     center;
+        display:        block;
         color:          #fff;
-        padding-top:    40px;
+        text-shadow:    0 2px 2px #2e2a48;
+        padding-top:    30px;
         font-size:      3em;
-        text-shadow:    0 2px 2px rgba(0, 0, 0, .1);
+        line-height:    1em;
 
         span {
+            font-family:    @fancy_font;
             font-weight:    normal;
-            font-family:    'Pacifico';
             font-size:      1.2em;
         }
     }
 
     .bigicon {
-        display:    block;
-        text-align: center;
+        font-size:  8em;
+        line-height:    1em;
         color:      #fff;
-        font-size:  13em;
-        margin:     30px 0 0 0;
+        text-align: center;
+        display:    block;
+        margin-top: 20px;
+        text-shadow:    0 2px 2px #2e2a48;
     }
 
-    #githubconnect {
+    h2 {
         .box_sizing(border-box);
+        display:        block;
+        padding:        0 20px;
+        color:          #fff;
+        text-shadow:    0 2px 2px #2e2a48;
+        font-weight:    normal;
+        font-size:      1.35em;
+        line-height:    1.4em;
+        text-align:     center;
+        margin-top:     20px;
+    }
+
+    #github_connect {
+        .twoway_gradient(#474264, #2e2a48);
         display:    block;
-        position:   absolute;
-        bottom:     0;
+        margin:     30px 20px 20px 20px;
         padding:    20px;
-        width:      100%;
+        color:      #fff;
+        font-size:  1.5em;
+        text-align: center;
+        border:     1px solid darken(#2e2a48, 2%);
+        box-shadow: inset 0 1px rgba(255, 255, 255, .2);
+        border-radius:  5px;
 
-        a {
-            .twoway_gradient(#8bca35, #459014);
-            display:    block;
-            width:      100%;
-            padding:    20px 0;
-            text-align: center;
-            color:      #fff;
-            font-size:  1.5em;
-            border:     1px solid #459014;
-
-            span {
-                font-weight:    bold;
-            }
+        span {
+            font-weight:    bold;
         }
     }
 }

@@ -8,11 +8,6 @@ $(document).ready(function() {
         if(!$(this).hasClass('active')) {
             $('#menu li.active').removeClass('active');
             $(this).addClass('active');
-            $('#ranking > li').fadeOut(200, function() {
-                $('#ranking > li').each(function(i) {
-                    $(this).delay((i + 1) * 100).fadeIn();
-                });
-            });
         }
     });
 
